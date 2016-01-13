@@ -1,0 +1,130 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial;
+}
+
+#menu-item-one {
+	background: rgb(130,202,156);
+}
+
+#menu-item-two {
+	background: rgb(109,207,246);
+}
+
+#menu-item-three {
+	background: rgb(189,140,191);
+}
+
+#menu-item-four{
+	background: rgb(244,154,193);
+}
+
+#header {
+	margin-left: 350px;
+}
+
+div.option {
+	width: 300px;
+	height: 230px;
+	float: left;
+	-webkit-transition: height .4s;
+	-moz-transition: height .4s;
+}
+
+
+p.text {
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	padding-top: 5px;
+	opacity: .6;
+	-webkit-transition: padding-top .4s;
+	-moz-transition: padding-top .4s;
+}
+
+img.icon {
+	display: block;
+	margin: 50px auto;
+	background-color: rgba(255,255,255,0.15);
+	width: 75px;
+	padding: 20px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
+	transition:box-shadow .4s;
+}
+
+div.option:hover p.text {
+	opacity: 1;
+}
+
+div.option:hover img.icon {
+	box-shadow: 0px 0px 0px 0px rgba(255,255,255,.6);
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#resume_block {
+        border-radius: 5px;
+        /*border: 1px solid #000;*/
+        width: 1400px;
+        /*height: 1300px;*/
+        background-color:#f5f5f5;
+        margin: auto;
+        padding: 20px;
+        box-shadow: 10px 10px 5px #888888;
+        margin-bottom: 100px;
+	margin-top: 200px;
+}
+    
+.tab {
+	padding:1em;
+}    
+    #position {
+        font-family:verdana;
+        text-align:center;
+        font-size: 20px;
+        margin-bottom:50px;
+    }
+    
+    p {
+        font-size: 22px;
+        margin-left: 25px;
+        line-height: 20px;
+    }
+    
+    .line-separator{
+        height:1px;
+        background:#717171;
+        margin-left: 25px;
+        margin-right: 25px;
+	margin-bottom: 10px;
+    }
+
+.date {
+        float: right;
+        margin-right: 25px;
+    }
+
+ul {
+        font-size: 22px;
+        list-style-position: inside;
+    }
+
+#main_image {
+        width:300px;
+        display:block;
+        margin: 0 auto;
+        border: 15px solid rgb(130,202,156);
+        margin-bottom: 100px;
+}
+
+#about_me_container {
+	margin-top: 100px;
+}
