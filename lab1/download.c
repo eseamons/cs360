@@ -22,6 +22,9 @@ int  main(int argc, char* argv[])
     unsigned nReadAmount;
     char strHostName[HOST_NAME_SIZE];
     int nHostPort;
+    bool debug = false;
+    int c, times_to_download = 1, err = 0;
+
 
 
     if(argc > 6)
@@ -31,24 +34,31 @@ int  main(int argc, char* argv[])
       }
     else
       {
+        
+        while((c = getopt(argc,argv, "c:d") ) != -1)
+        {
+
+            switch(c) 
+            {
+                case 'c':
+                    std::cout << optarg << std::endl;
+                    times_to_download = atoi( optarg );
+                    break;
+                case 'd':
+                    debug = true;
+                    break;
+                case '?':
+                    err = 1;
+                    break;
+            }
+        }
+
         strcpy(strHostName,argv[1]);
         nHostPort=atoi(argv[2]);
       }
 
-      int c;
-      while((c = getopt(argc,argv, "c:d") ) )
-      {
-
-      	switch(c) 
-      	{
-      		case 'c':
-      		std::cout << "\nc\n" << std::endl;
-      		case 'd':
-      		std::cout << "\nc\n" << std::endl;
-      		case '?':
-      		std::cout << "\n?\n" << std::endl;
-      	}
-      }
+      
+     
 
 
     printf("\nMaking a socket\n");
