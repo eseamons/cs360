@@ -21,7 +21,11 @@
 }
 
 #header {
-	margin-left: 350px;
+	margin-left: 370px;
+}
+
+#about-me-jumbo {
+ margin-top:150px;
 }
 
 div.option {
@@ -127,4 +131,23 @@ ul {
 
 #about_me_container {
 	margin-top: 100px;
+}
+
+#eric_name {
+	text-align:center;
+}
+
+#current_weather_image {
+	margin-top: 250px;
+	display:block;
+        margin: 0 auto;
+        border: 15px solid rgb(130,202,156);
+}
+
+#forecast_image {
+	margin-top: 275px;
+	text-align:center;
+	display:block;
+        margin: 0 auto;
+        border: 15px solid rgb(130,202,156);
 }
