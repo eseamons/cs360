@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <vector>
+#include "sample.cpp"
 
 #define SOCKET_ERROR        -1
 #define BUFFER_SIZE         500
@@ -26,6 +28,8 @@ int  main(int argc, char* argv[])
     bool debug = false;
     int c, times_to_download = 1, err = 0;
     std::string page;
+    vector<char*> header_lines;
+
 
 
 
@@ -59,6 +63,21 @@ int  main(int argc, char* argv[])
         nHostPort = atoi(argv[optind + 1]);
         page = argv[ optind + 2];
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -96,23 +115,62 @@ int  main(int argc, char* argv[])
 
     // Creat HTTP Message
     char *message = (char*)malloc(MAXGET);
-    sprintf (message, "GET %s HTTP/1.1\r\nHost:%s:%s\r\n\r\n",page,strHostName,nHostPort);
+    sprintf (message, "GET %s HTTP/1.1\r\nHost:%s:%u\r\n\r\n",page.c_str(),strHostName,nHostPort);
     // Send HTTP on the socket
-    printf("Request: %s\n", message);
+    //printf("Request: %s\n", message);
     write(hSocket,message,strlen(message));
-    // Read Respons back from socket
-    nReadAmount=read(hSocket,pBuffer,BUFFER_SIZE);
-    printf("%u\n",nReadAmount);
-    printf("Response %s", pBuffer);
+
+
+    GetHeaderLines(header_lines,hSocket,false);
+
+    // for(int i = 0; i < header_lines.size(); i++) {
+    // 	std::cout << header_lines[i] << std::endl;
+    // }
+
+
+    char* html_start;
+    int content_length = 0;
+
+    for(int i = 0; i < header_lines.size(); i++) {
+    	if(strstr(header_lines[i],"Content-Length") != NULL) {
+    		html_start = strstr(header_lines[i],"Content-Length");
+    		std::string test = string(html_start);
+    		test.erase(0,16);
+    		//std::cout << test << std::endl;
+    		
+    		content_length = atoi(test.c_str());
+    			
+    		
+    		//std::cout << content_length << std::endl;
+    	}
+    	
+    }
+
+
+    int total_bytes = 0;
+    while(total_bytes < content_length) {
+    	// Read Respons back from socket
+    	nReadAmount=read(hSocket,pBuffer,1);
+    	total_bytes += nReadAmount;
+    	std::cout << pBuffer[0];
+    }
+
+
+
+
+
+    
+    //printf("%u\n",nReadAmount);
+    //printf("Response %s", pBuffer);
 
 
     /* read from socket into buffer
     ** number returned by read() and write() is the number of bytes
     ** read or written, with -1 being that an error occured */
-    printf("\nReceived \"%s\" from server\n",pBuffer);
+    //printf("\nReceived \"%s\" from server\n",pBuffer);
     /* write what we received back to the server */
-    write(hSocket,pBuffer,nReadAmount);
-    printf("\nWriting \"%s\" to server",pBuffer);
+    //write(hSocket,pBuffer,nReadAmount);
+    //printf("\nWriting \"%s\" to server",pBuffer);
 
     printf("\nClosing socket\n");
     /* close socket */                       
@@ -125,3 +183,10 @@ int  main(int argc, char* argv[])
 
 
 }// end of main
+
+
+
+
+void download() {
+
+}
