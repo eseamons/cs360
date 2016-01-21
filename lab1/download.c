@@ -11,6 +11,7 @@
 #define SOCKET_ERROR        -1
 #define BUFFER_SIZE         500
 #define HOST_NAME_SIZE      255
+#define MAXGET 1000
 
 int  main(int argc, char* argv[])
 {
@@ -24,6 +25,7 @@ int  main(int argc, char* argv[])
     int nHostPort;
     bool debug = false;
     int c, times_to_download = 1, err = 0;
+    std::string page;
 
 
 
@@ -53,12 +55,11 @@ int  main(int argc, char* argv[])
             }
         }
 
-        strcpy(strHostName,argv[1]);
-        nHostPort=atoi(argv[2]);
+        strcpy(strHostName,argv[optind]);
+        nHostPort = atoi(argv[optind + 1]);
+        page = argv[ optind + 2];
       }
 
-      
-     
 
 
     printf("\nMaking a socket\n");
@@ -92,10 +93,10 @@ int  main(int argc, char* argv[])
         return 0;
     }
 
-#define MAXGET 1000
+
     // Creat HTTP Message
     char *message = (char*)malloc(MAXGET);
-    sprintf (message, "GET %s HTTP/1.1\r\nHost:%s:%s\r\n\r\n",argv[3],argv[1],argv[2]);
+    sprintf (message, "GET %s HTTP/1.1\r\nHost:%s:%s\r\n\r\n",page,strHostName,nHostPort);
     // Send HTTP on the socket
     printf("Request: %s\n", message);
     write(hSocket,message,strlen(message));
@@ -121,5 +122,6 @@ int  main(int argc, char* argv[])
         return 0;
     }
     free(message);
+
 
 }// end of main
