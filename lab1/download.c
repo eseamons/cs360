@@ -187,6 +187,6 @@ int  main(int argc, char* argv[])
 
 
 
-void download() {
+void download(int hSocket) {
 
 }
