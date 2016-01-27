@@ -6,11 +6,26 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 
 #define SOCKET_ERROR        -1
-#define BUFFER_SIZE         100
+#define BUFFER_SIZE         5000
 #define MESSAGE             "This is the message I'm sending back and forth"
 #define QUEUE_SIZE          5
+
+
+
+
+// this function will take the file or directory name from the header and return it to us
+std::string parse_file_dir_name(char pBuffer[]) {
+//pBuffer
+}
+
+
+std::string get_file_dir_contents() {
+    return "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<html>Hello, it's me!</html>\n";
+}
+
 
 int main(int argc, char* argv[])
 {
@@ -20,15 +35,19 @@ int main(int argc, char* argv[])
     int nAddressSize=sizeof(struct sockaddr_in);
     char pBuffer[BUFFER_SIZE];
     int nHostPort;
+    std::string baseDir;
+    // unsigned nReadAmount;
 
     if(argc < 2)
       {
-        printf("\nUsage: server host-port\n");
+        printf("\nUsage: server host-port dir\n");
         return 0;
       }
     else
       {
         nHostPort=atoi(argv[1]);
+        baseDir = argv[2];
+        std::cout << "Base Directory: " << baseDir << std::endl;
       }
 
     printf("\nStarting server");
@@ -48,7 +67,7 @@ int main(int argc, char* argv[])
     Address.sin_port=htons(nHostPort);
     Address.sin_family=AF_INET;
 
-    printf("\nBinding to port %d",nHostPort);
+    printf("\nBinding to port %d\n",nHostPort);
 
     /* bind to a port */
     if(bind(hServerSocket,(struct sockaddr*)&Address,sizeof(Address)) 
@@ -88,22 +107,27 @@ int main(int argc, char* argv[])
         printf("\nGot a connection from %X (%d)\n",
               Address.sin_addr.s_addr,
               ntohs(Address.sin_port));
-        strcpy(pBuffer,MESSAGE);
-        printf("\nSending \"%s\" to client",pBuffer);
-        /* number returned by read() and write() is the number of bytes
-        ** read or written, with -1 being that an error occured
-        ** write what we received back to the server */
-        write(hSocket,pBuffer,strlen(pBuffer)+1);
-        /* read from socket into buffer */
+        // strcpy(pBuffer,MESSAGE);
+        // printf("\nSending \"%s\" to client",pBuffer);
+        //  number returned by read() and write() is the number of bytes
+        // ** read or written, with -1 being that an error occured
+        // ** write what we received back to the server 
+        // write(hSocket,pBuffer,strlen(pBuffer)+1);
+        // /* read from socket into buffer */
         memset(pBuffer,0,sizeof(pBuffer));
         read(hSocket,pBuffer,BUFFER_SIZE);
+        printf("Got from browser \n%s\n",pBuffer);
+        parse_file_dir_name(pBuffer);
 
-        if(strcmp(pBuffer,MESSAGE) == 0)
-            printf("\nThe messages match");
-        else
-            printf("\nSomething was changed in the message");
 
     printf("\nClosing the socket");
+        memset(pBuffer,0,sizeof(pBuffer));
+        std::string contents = get_file_dir_contents();
+        sprintf(pBuffer,contents.c_str());
+        write(hSocket,pBuffer, strlen(pBuffer));
+
+        int optval = 1;
+        setsockopt (hServerSocket, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
         /* close socket */
         if(close(hSocket) == SOCKET_ERROR)
         {
@@ -112,3 +136,4 @@ int main(int argc, char* argv[])
         }
     }
 }
+
