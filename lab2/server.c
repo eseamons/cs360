@@ -167,6 +167,17 @@ int main(int argc, char* argv[])
 
         std::string file_path = parse_file_dir_name(pBuffer);
         file_path = remove_leading_slash(file_path);
+
+
+        std::string path_for_directory_listing = file_path;
+
+        if(get_last_char(baseDir) == "/") {
+        	file_path = baseDir + file_path;
+        }
+        else {
+        	file_path = baseDir + "/" + file_path;
+        }
+        
         struct stat filestat;
 
         bool error = false;
@@ -232,7 +243,16 @@ int main(int argc, char* argv[])
 					  std::string html_file_listing = "<!DOCTYPE HTML><html><head><title>Directory Listing</title></head><body><h1>Directory listing for "+file_path+"</h1>";
 					  while ((dp = readdir(dirp)) != NULL) {
 					  		// printf("name %s\n",dp->d_name);
-					  		html_file_listing += "<p><a href=\""+file_path+"/"+dp->d_name+"\">";
+
+
+					  		if(get_last_char(path_for_directory_listing) == "/") {
+					        	html_file_listing += "<p><a href=\"/"+path_for_directory_listing+dp->d_name+"\">";
+					        }
+					        else {
+					        	html_file_listing += "<p><a href=\"/"+path_for_directory_listing+"/"+dp->d_name+"\">";
+					        }
+
+					  		
 					  		html_file_listing.append(dp->d_name);
 					  		html_file_listing += "</a></p>";
 					  }
