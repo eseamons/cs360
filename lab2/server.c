@@ -20,6 +20,11 @@
 
 
 
+std::string get_last_char(std::string file_path) {
+	return file_path.substr(file_path.length() - 1);
+}
+
+
 
 // this function will take the file or directory name from the header and return it to us
 std::string parse_file_dir_name(char pBuffer[]) {//vector<char*> header_lines
