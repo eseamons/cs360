@@ -21,7 +21,10 @@
 
 
 std::string get_last_char(std::string file_path) {
-	return file_path.substr(file_path.length() - 1);
+	if(file_path.length() != 0)
+		return file_path.substr(file_path.length() - 1);
+	else
+		return "";
 }
 
 
@@ -55,6 +58,12 @@ std::string get_file_type(std::string file_path) {
     int period = file_path.find_last_of(".");
     // I use  + 1 because I don't really need the to include the period
     std::string ext = file_path.substr(period + 1);
+    if(file_path != "") {
+    	ext = file_path.substr(period + 1);
+    }
+    else {
+    	ext = "";
+    }
 
     std::cout << "\n" << ext << "\n";
 
@@ -245,7 +254,7 @@ int main(int argc, char* argv[])
 					  		// printf("name %s\n",dp->d_name);
 
 
-					  		if(get_last_char(path_for_directory_listing) == "/") {
+					  		if(get_last_char(path_for_directory_listing) == "/" || path_for_directory_listing == "") {
 					        	html_file_listing += "<p><a href=\"/"+path_for_directory_listing+dp->d_name+"\">";
 					        }
 					        else {
