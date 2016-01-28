@@ -239,6 +239,10 @@ int main(int argc, char* argv[])
 			        write(hSocket,pBuffer, strlen(pBuffer));
 				}
 				else {
+					std::string response_header = "HTTP/1.1 200 OK\r\nContent Type: text/html\r\n\r\n";
+			        sprintf(pBuffer,response_header.c_str());
+			        write(hSocket,pBuffer, strlen(pBuffer));
+
 					std::cout <<"\nHere are the contents of index.html\n";
 					FILE *fp = fopen(directory_index_html_path.c_str(),"rb");
 					char *buff = (char *)malloc(index_stat.st_size+1);
