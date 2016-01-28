@@ -5,7 +5,7 @@ stat: stat.cpp
 	g++ -o stat stat.cpp
 
 run-server: 
-	./server 3000 /webstuff
+	./server 3000 /webstuff/index.html
 
 clean-server:
 	rm server
