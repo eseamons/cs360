@@ -3,7 +3,7 @@ server: server.c
 
 
 run: 
-	./server 3000 /opt/bitnami/apache2/htdocs/cs360/
+	./server 3000 /opt/bitnami/apache2/htdocs/cs201r/
 
 clean:
 	rm server
