@@ -1,23 +1,303 @@
-<HTML>
-<HEAD>
-<TITLE>Test file for HTML</TITLE>
-</HEAD>
-<BODY BGCOLOR=#FFFFFF TEXT=#000000>
-<p>
-<H2>Test file for HTML</H2>
-<p>
-This is a test file for HTML.
 
-<ol>
-<li> Test
-<li> Test
-<li> Test
-<li> Test
-</ol>
-<P>
-<hr align=left width=20%>
-<FONT SIZE=-1> <I> Last Updated:</I> 10 March 1998<br> </FONT>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Eric Seamons' Resume</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+    	 body {
+        background-image: url('http://colonialflowers.net/wp-content/uploads/2013/04/wood-background.png');    
+    }
+    
+    #main_image {
+        width:300px;
+        display:block;
+        margin: 0 auto;
+        border: 20px solid #79CDCD;
+        margin-bottom: 100px;
+    }
+    
+    #page_title {
+        text-align:center;
+        font-size: 75px;
+        color: #FFF;
+        font-family:arial;
+        text-shadow: 4px 4px #000;
+        margin-bottom: 75px;
+    }
 
-</FONT>
-</BODY>
-</HTML>
+    #resume_block {
+        border-radius: 5px;
+        /*border: 1px solid #000;*/
+        width: 1400px;
+        /*height: 1300px;*/
+        background-color:#f5f5f5;
+        margin: auto;
+        padding:10px;
+        box-shadow: 10px 10px 5px #888888;
+        margin-bottom: 100px;
+    }
+    
+    .tab {
+        padding:1em;
+    }
+    
+    #name {
+        font-family: georgia;
+        text-align:center;
+        font-size: 40px;
+    }
+    
+    #position {
+        font-family:verdana;
+        text-align:center;
+        font-size: 20px;
+        margin-bottom:50px;
+    }
+    
+    .header {
+        font-family: georgia;
+        font-size: 30px;
+        margin-left: 25px;
+        margin-top:50px;
+    }
+    
+    p {
+        font-size: 22px;
+        margin-left: 25px;
+        line-height: 15px;
+    }
+    
+    .line-separator{
+        height:1px;
+        background:#717171;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    
+    ul {
+        font-size: 22px;
+        list-style-position: inside;
+    }
+    
+    .image_style {
+        width:300px;
+        border: 20px solid #79CDCD;
+        margin-bottom:75px;
+    }
+    
+    #image_left_column {
+        float: left;
+        margin-left: 350px;
+    }
+    
+    #image_right_column {
+        float: right;
+        margin-right: 350px;
+    }
+    
+    .date {
+        float: right;
+        margin-right: 25px;
+    }
+    
+    
+    .color_one {
+        background-color: #B9D7D9;
+        border-radius: 10px;
+        padding: .5px;
+    }
+    
+    .color_two {
+        background-color: #F4EBC3;
+        border-radius: 10px;
+        padding: .5px;
+    }
+    
+    .button {
+        border: 2px solid #000;
+        background-color: #FFF;
+        font-size: 30px;
+        display: block;
+        width: 250px;
+        padding: 10px;
+        border-radius: 10px;
+        text-align:center;
+        margin: 0 auto;
+        clear:both;
+        margin-bottom: 200px;
+    }
+    .button a {
+        text-decoration: none;
+    }
+    </style>
+</head>
+    <body>
+        <h1 id="page_title">Resume for Eric Seamons</h1>
+        
+        <div id="resume_block">
+            <h1 id="name">Eric Seamons</h1>
+            <h2 id="position">BYU CS Department Webmaster</h2>
+            
+            <img id="main_image" src="https://scontent-lax3-1.xx.fbcdn.net/hphotos-xfp1/t31.0-8/904429_10202582032101449_928758599_o.jpg" alt="Eric's Photo">
+            
+            <div class="color_two">
+                <h2 class="header">Contact Info</h2>
+                <div class="line-separator"></div>
+                <p>Cell: 385-208-7160</p>
+                <p>Email: ericseamons90@gmail.com</p>
+                <p>Address: 659 Wymount Terrace Provo, Utah 84604</p>
+            </div>
+            
+            
+            <div class="color_one">
+                <h2 class="header">Objective</h2>
+                <div class="line-separator"></div>
+                <p>Seeking a software development internship for Summer 2016</p>
+            </div>    
+            
+            <div class="color_two">
+                <h2 class="header">Work Experience</h2>
+                <div class="line-separator"></div>
+                <p><strong>BYU CS Department Webmaster<span class="date">March 2015-Present</span></strong></p>
+                <p><strong>Web Developer for BYU Chinese Flagship Program<span class="date">January-April 2015</span></strong></p>
+                <p><strong>Monitoring Agent for Vivint Home Security<span class="date">May-August 2014</span></strong></p>
+                <p><strong>Haitian Creole Team Translator<span class="date">July 2012-May 2013</span></strong></p>
+            </div>
+            
+            <div class="color_one">
+                <h2 class="header">Unique Qualities</h2>
+                <div class="line-separator"></div>
+                <ul>
+                    <li>Passionate learner that speaks 4 languages (English, Spanish, Chinese, Haitian Creole)</li>
+                    <li>Eager to learn new things, even outside of class</li>
+                    <li>Loves to program during freetime (works on personal programming projects</li>
+                        <ul>
+                            <li>Personal family history site</li>
+                            <li>Personal site to display resume and showcase my skills</li>
+                        </ul>
+                    <li>Determination - ability to persist through difficult challenges</li>
+                </ul>
+            </div>
+                
+            <div class="color_two">
+                <h2 class="header">Summary of Qualifications</h2>
+                <div class="line-separator"></div>
+                <ul>
+                    <li>3<sup>rd</sup> year computer science student</li>
+                    <li><strong>CS courses taken:</strong>
+                        <ul>
+                            <li>Introduction to Programming (C++)</li>
+                            <li>Data Structures (C++)</li>
+                            <li>Discrete Data Structures (C++)</li>
+                            <li>Advanced Programming Concepts (Java)</li>
+                            <li>Computer Systems (C-language)</li>
+                            <li>Computational and Probabalistic Models (theory, no programming) (current)</li>
+                            <li>Topics in Computer Science (web development) (current)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programming Languages:</strong>  C++, Java, C</li>
+                    <li><strong>Web programming:</strong> HTML, CSS, JavaScript, JQuery, PHP</li>
+                    <li><strong>Database:</strong> SQL/MySQL</li>
+                    <li><strong>Other technologies:</strong> Bootstrap (framework), Drupal (CMS), GitHub and Bitbucket (git repositories for versioning)</li>
+                </ul>
+            </div>
+            
+            
+            <div class="color_one">
+                <h2 class="header">Foreign Language Skills/Experience</h2>
+                <div class="line-separator"></div>
+                <ul>
+                    <li>Fluent in four languages: English, Spanish (10 years), Chinese (4 years), Haitian Creole (2 years)</li>
+                    <li>Study abroad in Mexico (Summer 2013) and China (Fall 2013)</li>
+                </ul>
+            </div>
+            
+            <div class="color_two">
+                <h2 class="header">Community/Volunteer Activities</h2>
+                <div class="line-separator"></div>
+                <p><strong>Volunteer Representative - Church of Jesus Christ of Latter-Day Saints<span class="date">June 2010-June 2012</span></strong></p>
+            </div>
+            
+            
+            <h2 class="header">Links</h2>
+            <div class="line-separator"></div>
+            <a href="images.html"><p><span class="tab"></span>Pictures</p></a>
+            <a href="portfolio.html"><p><span class="tab"></span>Portfolio with Git repositories</p></a>
+            
+            
+            
+            
+            
+            <h2 class="header">Get weather for Utah City using REST api</h2>
+            <div class="line-separator"></div>
+            <br>
+            <p>* Make sure city names are capitalized</p>
+            <form>
+                <p>Enter A Utah City: <input type="text" id="cityfield" value=""></p>
+                <p><input id="button" type="submit" value="Get weather summary"></p>
+                <p>Suggestion:</p><span id="txtHint">Empty</span>
+            </form>
+            <textarea id="dispcity">No City</textarea>
+            <p>Current Weather</p>
+            <div id="weather"><p>No weather</p></div>
+            
+            
+            <script>
+                $( "#cityfield" ).keyup(function() {
+                  var url = "https://students.cs.byu.edu/~clement/CS360/ajax/getcity.cgi?q="+$("#cityfield").val();
+                  $.getJSON(url,function(data) {
+                    var everything;
+                    everything = "<ul>";
+                    $.each(data, function(i,item) {
+                      everything += "<li> "+data[i].city+'</li>';
+                    });
+                    everything += "</ul>";
+                    $("#txtHint").html(everything);
+                  })
+                  .done(function() { console.log('getJSON request succeeded!'); })
+                  .fail(function(jqXHR, textStatus, errorThrown) { 
+                    console.log('getJSON request failed! ' + textStatus); 
+                    console.log("incoming "+jqXHR.responseText);
+                  })
+                  .always(function() { console.log('getJSON request ended!');
+                  })
+                  .complete(function() { console.log("complete"); });
+                });
+                
+                $("#button").click(function(e){
+                  var value = $("#cityfield").val();
+                  $("#dispcity").text(value);
+                  
+                  
+                  var myurl= "https://api.wunderground.com/api/db641ad49bb24da6/geolookup/conditions/q/UT/";
+                  myurl += value;
+                  myurl += ".json";
+                  console.log(myurl);
+                  $.ajax({
+                    url : myurl,
+                    dataType : "jsonp",
+                    success : function(parsed_json) {
+                      var location = parsed_json['location']['city'];
+                      var temp_string = parsed_json['current_observation']['temperature_string'];
+                      var current_weather = parsed_json['current_observation']['weather'];
+                      everything = "<ul>";
+                      everything += "<li>Location: "+location;
+                      everything += "<li>Temperature: "+temp_string;
+                      everything += "<li>Weather: "+current_weather;
+                      everything += "</ul>";
+                      $("#weather").html(everything);
+                    }
+                  });
+                  
+                  
+                  e.preventDefault();
+                });
+            </script>
+            
+        </div>
+        
+    </body>
+</html>
