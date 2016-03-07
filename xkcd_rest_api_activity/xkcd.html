@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>xkcd learning activity</title>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</head>
+	<body>
+		<form id="xkcd-form">
+            Enter A xkcd comic number: <input type="text" id="comic_num" value=""><br>
+            <input id="button" type="submit" value="Submit">
+        </form>
+
+        <div id="xkcd-content">
+
+        </div>
+
+		<script>  
+
+			$( document ).ready(function() {
+			    get_kxcd();
+			});
+            $("#button").click(get_kxcd);
+
+            function get_kxcd(e){
+              var value = $("#comic_num").val();
+              
+              var myurl= "http://dynamic.xkcd.com/api-0/jsonp/comic/"+value;
+              $.ajax({
+                url : myurl,
+                crossDomain: true,
+                jsonpCallback: "xkcddata",
+                dataType : "jsonp",
+                success : function(parsed_json) {
+                	var comic_info = JSON.stringify(parsed_json);
+                	var img_url = JSON.stringify(parsed_json["img"]);
+                	var alt = JSON.stringify(parsed_json["alt"]);
+                	var title = JSON.stringify(parsed_json["title"]);
+                	//alert(comic_info);
+					$("#xkcd-content").html("<p>"+title+"</p><img alt="+alt+" src="+img_url+">");
+
+                }
+              });
+              
+              
+              e.preventDefault();
+            }
+
+		</script>
+
+	</body>
+</html>
