@@ -1,8 +1,58 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+			#weather_block {
+		        border-radius: 5px;
+		        width: 500px;
+		        background-color:#f5f5f5;
+		        margin: auto;
+		        padding:20px;
+		        border: 1px solid black;
+		        box-shadow: 5px 5px 5px #888888;
+		        margin-top: 75px;
+		        /*font-size:20px;*/
+		    }
 
-a {
-  color: #00B7FF;
-}
+		    #weather_block_title {
+		    	text-align:center;
+		    }
+
+		    #movie_search_block {
+		    	border-radius: 5px;
+		        width: 500px;
+		        background-color:#f5f5f5;
+		        margin: auto;
+		        padding:20px;
+		        border: 1px solid black;
+		        box-shadow: 5px 5px 5px #888888;
+		        margin-top: 50px;
+		    }
+
+		    #movie_search_block_title {
+		    	text-align:center;
+		    }
+
+		    #weather_button {
+		    	margin-top:10px;
+		    	margin-bottom:10px;
+		    }
+
+
+		    #movie_search_button {
+		    	margin-top:10px;
+		    	margin-bottom:10px;
+		    }
+
+		    #movie_info_title {
+		    	text-align:center;
+		    }
+		    #movie_poster_image {
+		    	 display: block;
+			    margin-left: auto;
+			    margin-right: auto;
+		    }
+
+		    #button {
+		    	margin-bottom:20px;
+		    	margin-top:5px;
+		    }
+		    body {
+		        background-image: url('http://eskipaper.com/images/earth-background-2.jpg');    
+		    }

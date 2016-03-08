@@ -3,6 +3,9 @@ var fs = require('fs');
 var router = express.Router();
 var __dirname = "routes";
 
+var request = require('request');
+
+
 /* GET home page. */
 router.get('/', function(req, res) {
   res.sendFile('weather.html', { root:  'public' });
@@ -61,6 +64,43 @@ router.get('/getcity',function(req,res,next) {
 
 
 }); // end of /getcity route
+
+
+
+
+router.get('/getweather',function(req,res,next) {
+    console.log("In getweather route");
+    var query_city = req.query.q;
+    console.log("get weather for " + query_city);
+
+    var myurl= "http://api.wunderground.com/api/db641ad49bb24da6/geolookup/conditions/q/UT/";
+    myurl += query_city;
+    myurl += ".json";
+
+
+    request(myurl, function (error, response, body) {
+        res.status(response.statusCode).json(JSON.parse(body));
+    })
+
+
+}); // end of /getweather route
+
+
+
+router.get('/getmovieinfo',function(req,res,next) {
+    console.log("In getmovieinfo route");
+    var query_movie = req.query.q;
+    console.log("get movie info for " + query_movie);
+
+    var myurl= "http://api.themoviedb.org/3/search/movie?query="+query_movie+"&api_key=2428d1c265f0b030719a14e20f3c086a";
+
+
+    request(myurl, function (error, response, body) {
+        res.status(response.statusCode).json(JSON.parse(body));
+    })
+
+
+}); // end of /getweather route
 
 
 
