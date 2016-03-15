@@ -1,0 +1,6 @@
+nohup: ignoring input
+[0mGET / [32m200 [0m15.956 ms - 617[0m
+[0mGET /javascripts/comments.js [32m200 [0m3.130 ms - 1005[0m
+POST comment route
+{ '{"Name":"Mickey","Comment":"Hello"}': '' }
+[0mPOST /comment [32m200 [0m23.546 ms - 2[0m
