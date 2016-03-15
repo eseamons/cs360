@@ -1,0 +1,44 @@
+nohup: ignoring input
+Connected
+[0mGET / [36m304 [0m9.356 ms - -[0m
+[0mGET /javascripts/comments.js [32m200 [0m5.988 ms - 1688[0m
+POST comment route
+{ _id: 56e799300d22aa25176be34b,
+  Comment: 'This is so cool!',
+  URL: 'http://www.w3schools.com/bootstrap/bird.jpg',
+  Name: 'Eric' }
+{ _id: 56e799300d22aa25176be34b,
+  Comment: 'This is so cool!',
+  URL: 'http://www.w3schools.com/bootstrap/bird.jpg',
+  Name: 'Eric',
+  __v: 0 }
+[0mPOST /comment [32m200 [0m36.809 ms - 2[0m
+In the GET route?
+[0mGET /comment [32m200 [0m11.568 ms - 139[0m
+[0mGET / [36m304 [0m1.363 ms - -[0m
+[0mGET /javascripts/comments.js [32m200 [0m1.651 ms - 1688[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.894 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m1.725 ms - -[0m
+[0mGET / [36m304 [0m0.710 ms - -[0m
+[0mGET /javascripts/comments.js [32m200 [0m0.966 ms - 1700[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.047 ms - -[0m
+[0mGET / [36m304 [0m0.992 ms - -[0m
+[0mGET /javascripts/comments.js [32m200 [0m0.776 ms - 1688[0m
+In the GET route?
+[0mGET /comment [36m304 [0m1.642 ms - -[0m
+POST comment route
+{ _id: 56e799dd0d22aa25176be34c,
+  Comment: 'Hello!',
+  URL: 'http://www.chickensmoothie.com/oekaki/image/image.php?id=2359764&size=large&format=auto&rev=1440882464',
+  Name: 'Dr. Clement' }
+{ _id: 56e799dd0d22aa25176be34c,
+  Comment: 'Hello!',
+  URL: 'http://www.chickensmoothie.com/oekaki/image/image.php?id=2359764&size=large&format=auto&rev=1440882464',
+  Name: 'Dr. Clement',
+  __v: 0 }
+[0mPOST /comment [32m200 [0m3.728 ms - 2[0m
+In the GET route?
+[0mGET /comment [32m200 [0m1.883 ms - 333[0m
