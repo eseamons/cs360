@@ -42,3 +42,180 @@ POST comment route
 [0mPOST /comment [32m200 [0m3.728 ms - 2[0m
 In the GET route?
 [0mGET /comment [32m200 [0m1.883 ms - 333[0m
+POST comment route
+{ _id: 56e79aba0d22aa25176be34d,
+  Comment: 'This looks pretty cool!',
+  URL: 'http://www.telegraphcrossfit.com/wp-content/uploads/2013/07/american-flag-2.jpg',
+  Name: 'American' }
+{ _id: 56e79aba0d22aa25176be34d,
+  Comment: 'This looks pretty cool!',
+  URL: 'http://www.telegraphcrossfit.com/wp-content/uploads/2013/07/american-flag-2.jpg',
+  Name: 'American',
+  __v: 0 }
+[0mPOST /comment [32m200 [0m3.166 ms - 2[0m
+In the GET route?
+[0mGET /comment [32m200 [0m1.887 ms - 518[0m
+[0mGET / [32m200 [0m1.063 ms - 1712[0m
+[0mGET /javascripts/comments.js [32m200 [0m4.708 ms - 1688[0m
+In the GET route?
+[0mGET /comment [36m304 [0m3.145 ms - -[0m
+[0mGET / [36m304 [0m0.531 ms - -[0m
+[0mGET /javascripts/comments.js [32m200 [0m1.208 ms - 1782[0m
+POST comment route
+{ _id: 56e7a1ca0d22aa25176be34e,
+  Comment: 'Join the dark side!',
+  URL: 'https://www.sideshowtoy.com/wp-content/uploads/2015/12/star-wars-darth-vader-sixth-scale-thumb-1000763.jpg',
+  Name: 'Darth Vader' }
+{ _id: 56e7a1ca0d22aa25176be34e,
+  Comment: 'Join the dark side!',
+  URL: 'https://www.sideshowtoy.com/wp-content/uploads/2015/12/star-wars-darth-vader-sixth-scale-thumb-1000763.jpg',
+  Name: 'Darth Vader',
+  __v: 0 }
+[0mPOST /comment [32m200 [0m2.757 ms - 2[0m
+In the GET route?
+[0mGET /comment [32m200 [0m2.363 ms - 729[0m
+POST comment route
+{ _id: 56e7a2b20d22aa25176be34f,
+  Comment: 'Se me antoja la cochinita pibil',
+  URL: 'http://www.presuel.com/carrito/images/tipic_01.jpg',
+  Name: 'Yucateca' }
+{ _id: 56e7a2b20d22aa25176be34f,
+  Comment: 'Se me antoja la cochinita pibil',
+  URL: 'http://www.presuel.com/carrito/images/tipic_01.jpg',
+  Name: 'Yucateca',
+  __v: 0 }
+[0mPOST /comment [32m200 [0m2.588 ms - 2[0m
+In the GET route?
+[0mGET /comment [32m200 [0m2.549 ms - 893[0m
+[0mGET / [36m304 [0m1.193 ms - -[0m
+[0mGET /javascripts/comments.js [32m200 [0m1.228 ms - 1808[0m
+In the GET route?
+[0mGET /comment [36m304 [0m3.655 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.702 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m14.230 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.756 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.321 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m4.247 ms - -[0m
+[0mGET / [36m304 [0m0.651 ms - -[0m
+[0mGET /javascripts/comments.js [32m200 [0m1.691 ms - 1985[0m
+[0mGET / [36m304 [0m0.571 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.903 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m3.404 ms - -[0m
+[0mGET / [36m304 [0m1.226 ms - -[0m
+[0mGET /javascripts/comments.js [32m200 [0m1.021 ms - 1985[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.294 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m5.293 ms - -[0m
+[0mGET / [32m200 [0m3.047 ms - 1712[0m
+[0mGET /javascripts/comments.js [32m200 [0m0.854 ms - 1985[0m
+[0mGET /favicon.ico [33m404 [0m252.236 ms - 1574[0m
+In the GET route?
+[0mGET /comment [32m200 [0m2.410 ms - 893[0m
+[0mGET / [36m304 [0m0.703 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.662 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m39.085 ms - 1574[0m
+In the GET route?
+[0mGET /comment [36m304 [0m3.233 ms - -[0m
+[0mGET / [32m200 [0m2.942 ms - 1712[0m
+[0mGET /javascripts/comments.js [32m200 [0m0.773 ms - 1985[0m
+[0mGET /favicon.ico [33m404 [0m42.268 ms - 1574[0m
+POST comment route
+{ _id: 56e881190d22aa25176be350,
+  Comment: 'a',
+  URL: 'https://tse1.mm.bing.net/th?id=OIP.Meb144fe08ad3e9acc6f102aa015cd442o0&w=308&h=172&c=7&rs=1&qlt=90&o=4&pid=1.1',
+  Name: 'a' }
+{ _id: 56e881190d22aa25176be350,
+  Comment: 'a',
+  URL: 'https://tse1.mm.bing.net/th?id=OIP.Meb144fe08ad3e9acc6f102aa015cd442o0&w=308&h=172&c=7&rs=1&qlt=90&o=4&pid=1.1',
+  Name: 'a',
+  __v: 0 }
+[0mPOST /comment [32m200 [0m4.022 ms - 2[0m
+In the GET route?
+[0mGET /comment [32m200 [0m3.335 ms - 1080[0m
+[0mGET / [32m200 [0m0.910 ms - 1712[0m
+[0mGET /javascripts/comments.js [32m200 [0m3.254 ms - 1985[0m
+[0mGET /favicon.ico [33m404 [0m19.629 ms - 1574[0m
+[0mGET /favicon.ico [33m404 [0m16.627 ms - 1574[0m
+In the GET route?
+[0mGET /comment [32m200 [0m2.103 ms - 1080[0m
+[0mGET / [36m304 [0m0.632 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.532 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.617 ms - -[0m
+[0mGET / [36m304 [0m0.800 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.705 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.120 ms - -[0m
+[0mGET / [36m304 [0m0.967 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.583 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m13.544 ms - 1574[0m
+In the GET route?
+[0mGET /comment [32m200 [0m3.268 ms - 1080[0m
+In the GET route?
+[0mGET /comment [36m304 [0m2.694 ms - -[0m
+[0mGET / [36m304 [0m1.312 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.638 ms - -[0m
+[0mGET / [36m304 [0m0.647 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.438 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m12.926 ms - 1574[0m
+[0mGET / [32m200 [0m1.073 ms - 1712[0m
+[0mGET /javascripts/comments.js [32m200 [0m2.948 ms - 1985[0m
+[0mGET /favicon.ico [33m404 [0m17.832 ms - 1574[0m
+In the GET route?
+[0mGET /comment [32m200 [0m2.496 ms - 1080[0m
+[0mGET / [32m200 [0m1.331 ms - 1712[0m
+[0mGET /javascripts/comments.js [32m200 [0m1.958 ms - 1985[0m
+[0mGET /favicon.ico [33m404 [0m16.753 ms - 1574[0m
+In the GET route?
+[0mGET /comment [32m200 [0m2.975 ms - 1080[0m
+POST comment route
+{ _id: 56ec506d0d22aa25176be351,
+  Comment: 'Take care of me please!',
+  URL: 'http://www.coolthings.com.au/sites/default/files/imagecache/product_full/earth-projector-dome-world.jpg',
+  Name: 'Earth' }
+{ _id: 56ec506d0d22aa25176be351,
+  Comment: 'Take care of me please!',
+  URL: 'http://www.coolthings.com.au/sites/default/files/imagecache/product_full/earth-projector-dome-world.jpg',
+  Name: 'Earth',
+  __v: 0 }
+[0mPOST /comment [32m200 [0m2.977 ms - 2[0m
+In the GET route?
+[0mGET /comment [32m200 [0m4.829 ms - 1286[0m
+[0mGET / [36m304 [0m1.562 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m1.210 ms - -[0m
+In the GET route?
+[0mGET /comment [36m304 [0m7.914 ms - -[0m
+[0mGET / [36m304 [0m0.533 ms - -[0m
+[0mGET /javascripts/comments.js [36m304 [0m0.520 ms - -[0m
+In the GET route?
+[0mGET /comment [32m200 [0m1.883 ms - 1099[0m
+[0mGET /test_files/test.jpg [33m404 [0m20.362 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m167.773 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m167.763 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m167.565 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m167.471 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m167.361 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m167.158 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m167.067 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m166.977 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m166.803 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m179.664 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m80.559 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m80.020 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m79.732 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m79.666 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m79.555 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m79.284 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m79.158 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m79.048 ms - 1574[0m
+[0mGET /test_files/test.jpg [33m404 [0m78.943 ms - 1574[0m
+[0mGET / [32m200 [0m1.233 ms - 1712[0m
+[0mGET /javascripts/comments.js [32m200 [0m0.788 ms - 1985[0m
+[0mGET /favicon.ico [33m404 [0m13.564 ms - 1574[0m

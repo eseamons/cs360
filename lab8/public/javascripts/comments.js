@@ -1,19 +1,28 @@
 $(document).ready(function(){
     $("#serialize").click(function(){
-        var myobj = {Name:$("#Name").val(), URL:$("#ImageURL").val(), Comment:$("#Comment").val()};
-        jobj = JSON.stringify(myobj);
-        $("#json").text(jobj);
-        
-        var url = "comment";
-		$.ajax({
-		  url:url,
-		  type: "POST",
-		  data: jobj,
-		  contentType: "application/json; charset=utf-8",
-		  success: function(data,textStatus) {
-		      //$("#done").html(textStatus);
-		  }
-		}) // end of ajax call
+
+    	if($("#Name").val() != "" && $("#ImageURL").val() != "" && $("#Comment").val() != "") {
+	        var myobj = {Name:$("#Name").val(), URL:$("#ImageURL").val(), Comment:$("#Comment").val()};
+	        $("#Name").val("");
+	        $("#ImageURL").val("");
+	        $("#Comment").val("");
+	        jobj = JSON.stringify(myobj);
+	        $("#json").text(jobj);
+	        
+	        var url = "comment";
+			$.ajax({
+			  url:url,
+			  type: "POST",
+			  data: jobj,
+			  contentType: "application/json; charset=utf-8",
+			  success: function(data,textStatus) {
+			      //$("#done").html(textStatus);
+			  }
+			}) // end of ajax call
+		}
+		else {
+			alert("All fields must be filled out");
+		}
 
     }); // end of serialize click event
 
@@ -29,7 +38,7 @@ $(document).ready(function(){
           everything += '<div class="col-sm-3">';
           everything += '<div class="well">';
           everything += '<span>'+ com.Name +'</span>';
-          everything += '<img src="'+com.URL+'" style="margin-left:30px;" class="img-circle" height="40" width="40" alt="Avatar">';
+          everything += '<a href="'+com.URL+'"><img src="'+com.URL+'" style="margin-left:30px;" class="img-circle" height="40" width="40" alt="Avatar"></a>';
           everything += '</div>';
           everything += '</div>';
           everything += '<div class="col-sm-9">';
