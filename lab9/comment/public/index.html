@@ -2,13 +2,14 @@
 <head>
   <title>Comments</title>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css">
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="javascripts/app.js"></script>
 
 </head>
 <body ng-app="comment" ng-controller="MainCtrl">
 <div class="row">
-<div class="col-md-6 col-md-offset-3">
+<div class="text-center">
 <div class="page-header"> 
   <h1>Comments </h1>
 </div>
@@ -20,7 +21,7 @@
   <div>
     {{test}}
   </div>
-  <div ng-repeat="comment in comments | orderBy: '-upvotes'">
+  <div class="comment-block" ng-repeat="comment in comments | orderBy: '-upvotes'">
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
     {{comment.title}} - upvotes: {{comment.upvotes}}
     <span class="glyphicon glyphicon-remove-circle" ng-click="removeComment(comment)"></span>

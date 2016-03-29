@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- include our dependency on angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <meta charset="utf-8">
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>User Avatar Template</title>
+</head>
+<body>
+  <!--
+    1. ng-app='app' tells angular that everything within this div should function within
+    the scope of a declared angular module with the name of app.
+    2. ng-controller='mainCtrl' tells angular that the scope of this div should be handled
+    by a controller by the name of 'mainCtrl'. In a bigger application you will likely have
+    multiple controllers within one ng-app
+  -->
+  <div ng-app='app' ng-controller='mainCtrl'> <!-- [1],[2] -->
+    <h1>Create new user</h1>
+    
+   
+    <form name='userForm' ng-submit='addNew(userForm)'> <!-- [1], [2] -->
+      
+      <input placeholder='Name' ng-model='userForm.name'/> <!-- [3] -->
+      <input placeholder='Image Url' ng-model='userForm.url'/>
+      
+      <!-- 
+      setting button to type submit will trigger the ng-submit of the 
+      form that button is a child of.
+      -->
+      <button type='submit'>Add New</button>
+    </form>
+    <ul class="User-list">
+      <li ng-repeat="user in users | orderBy:'name'">
+         <avatar user='user'/>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
