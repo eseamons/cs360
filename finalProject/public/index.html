@@ -19,6 +19,11 @@
     <!-- Custom styles for this template -->
     <link href="stylesheets/carousel.css" rel="stylesheet">
     <link href="stylesheets/navbar.css" rel="stylesheet">
+    <style>
+    footer {
+    	margin-top:20px;
+    }
+    </style>
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -32,7 +37,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <span class="navbar-brand">Culture Connect</span>
+      <a class="navbar-brand" href="index.html">Culture Connect</a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
@@ -47,14 +52,14 @@
 	        <ul class="dropdown-menu">
 	          <li><a href="restaurants.html">Restaurants</a></li>
 	          <li><a href="#">Cultural Events</a></li>
-	          <li><a href="#">Museums/Exhibits</a></li>
+	          <li><a href="exhibits.html">Museums/Exhibits</a></li>
 	        </ul>
 	      </li>
         <li>
           <a href="#">Contact Us</a>
         </li>
         <li>
-          <a href="#">My Account</a>
+          <a href="account.html">My Account</a>
         </li>
       </ul>
     </nav>
@@ -63,7 +68,7 @@
 
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide center" data-ride="carousel" style="margin-top:100px">
+    <div id="myCarousel" class="carousel slide center hidden-xs" data-ride="carousel" style="margin-top:100px">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -76,8 +81,6 @@
           <div class="container">
             <div class="carousel-caption">
               <h1 class="carouselHeading">Experience Foreign Culture</h1>
-              <!--<p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>-->
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
             </div>
           </div>
         </div>
@@ -86,8 +89,6 @@
           <div class="container">
             <div class="carousel-caption">
               <h1 class="carouselHeading">Visit Cultural exhibits</h1>
-              <!-- <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -96,8 +97,6 @@
           <div class="container">
             <div class="carousel-caption">
               <h1 class="carouselHeading">Taste Foreign Cuisine</h1>
-              <!--<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
         </div>
@@ -113,6 +112,8 @@
     </div><!-- /.carousel -->
 
 
+
+    <h1 class="hidden-md hidden-lg" style="text-align:center;margin-top:150px;">Connect with another culture in your own neighborhood</h1>
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -130,21 +131,21 @@
         <div class="col-lg-4">
           <img class="img-circle" src="http://historicphiladelphia.org/uploads/images/FS%20Chinese%20Lantern%20Festival/Dragon%20Dusk.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Cultural Events</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+          <p>Attend various cultural events near you for a foreign culture of your choice. Get times and locations for upcoming cultural events. You don't need a $1000 plane ticket to experience cultural diversity. Enjoy a cultural experience right in your own backyard.</p>
           <p><a class="btn btn-default" href="#" role="button">View Events &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="http://artmusela.com/wp-content/uploads/2014/09/SunStone.EntranceMNAH.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Museums/Exhibits</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View Exhibits &raquo;</a></p>
+          <p>Go to see museums and exhibits depicting the history and cultural development of a particular country. View hundreds of years of foreign history right before your eyes and just minutes away from your own home. View user ratings for exhibits in your area.</p>
+          <p><a class="btn btn-default" href="exhibits.html" role="button">View Exhibits &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 
       <!-- FOOTER -->
       <footer>
-        <p>Created by Eric Seamons &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>Created by Eric Seamons &middot;</p>
       </footer>
 
     </div><!-- /.container -->
@@ -162,7 +163,7 @@
     <script src="http://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
-        <script>
+    <script>
 		$('#myCarousel').carousel({
 		  interval: 3000
 		});

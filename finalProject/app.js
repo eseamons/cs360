@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/CultureConnect');
+require('./models/Restaurants');
+require('./models/Countries');
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -22,14 +28,35 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//app.use('/', routes);
+//app.use('/users', users);
+
+
+// Configuring Passport
+
+var passport = require('passport');
+var expressSession = require('express-session');
+app.use(expressSession({
+  secret: 'mySecretKey',
+  resave: true,
+  saveUninitialized: true  
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Initialize Passport
+var initPassport = require('./passport/init');
+initPassport(passport);
+
+var routes = require('./routes/index')(passport);
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+    //var err = new Error('Not Found');
+    //err.status = 404;
+    res.status(404).sendFile('error404.html', { root:  'public' });
+    //next(err);
 });
 
 // error handlers
