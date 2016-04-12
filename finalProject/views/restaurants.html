@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Cultural Exhibits and Museums</title>
+    <title>Foreign Restaurants</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,20 +16,24 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <!-- angular depedencies -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    
-    <script src="javascripts/exhibitApp.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="javascripts/navigation_bar.js"></script>
+
+    <script src="javascripts/restApp.js"></script>
     <script src="javascripts/factories.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="stylesheets/navbar.css" rel="stylesheet">
-    <link href="stylesheets/exhibits.css" rel="stylesheet">
+    <link href="stylesheets/restaurants.css" rel="stylesheet">
     <link href="stylesheets/btn-outline.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
-  <body ng-app="exhibitApp" ng-controller="exhibitCtrl">
+  <body ng-app="restApp" ng-controller="restCtrl">
   		<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
 		  <div class="container">
 		    <div class="navbar-header">
@@ -42,39 +46,36 @@
 		      <a class="navbar-brand" href="index.html">Culture Connect</a>
 		    </div>
 		    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-		      <ul class="nav navbar-nav">
-		        <li class="active">
-		          <a href="index.html">Home</a>
+		      <ul class="nav navbar-nav navbar-link-options">
+		        <li>
+		          <a href="/">Home</a>
 		        </li>
 		        <li>
 		          <a href="#">How to Use</a>
 		        </li>
-				<li class="dropdown">
+				<li class="dropdown active">
 			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
 			        <ul class="dropdown-menu">
-			          <li><a href="restaurants.html">Restaurants</a></li>
+			          <li><a href="/restaurant_page">Restaurants</a></li>
 			          <li><a href="#">Cultural Events</a></li>
-			          <li><a href="exhibits.html">Museums/Exhibits</a></li>
+			          <li><a href="/exhibits_page">Museums/Exhibits</a></li>
 			        </ul>
 			      </li>
 		        <li>
 		          <a href="#">Contact Us</a>
-		        </li>
-		        <li>
-		          <a href="account.html">My Account</a>
 		        </li>
 		      </ul>
 		    </nav>
 		  </div>
 		</header>
 
-		<h1 id="exhibitPageTitle">Cultural Exhibits and Museums</h1>
+		<h1 id="restaurantPageTitle">Foreign Restaurants</h1>
 
 		<div class="form-group col-md-3 col-md-offset-1">
 
-		  <form ng-submit="getExhibits()" role="form">
+		  <form ng-submit="getRestaurants()" role="form">
 		  	  <label for="sel1">Choose a Country</label>
-			  <select ng-model="exhibitCountry" class="form-control" required>
+			  <select ng-model="restCountry" class="form-control" required>
 			    <option disabled selected value> ---- </option>
 			  	<option ng-repeat="country in countries" ng-value="country._id" value="country._id">{{country.name}}</option>
 			  </select>
@@ -87,8 +88,8 @@
 			    <input type="checkbox" ng-model="rememberLocation">
 			    <label for="location">Remember Location</label>
 			</div>
-			
-		  	<h2>Distance Within:</h2>
+
+			<h2>Distance Within:</h2>
 		  	<div class="radio">
 		      <label><input type="radio" ng-model="maxDistance" ng-value="25000">Any distance</label>
 		    </div>
@@ -116,19 +117,21 @@
 		    <div class="radio">
 		      <label><input type="radio" ng-model="maxDistance" ng-value="50">50 miles</label>
 		    </div>
-			<button type="submit" style="margin-top:25px;" class="btn btn-lg btn-danger btn-outline">Get exhibits</button>
+			<button style="margin-top:25px;" type="submit" class="btn btn-lg btn-danger btn-outline">Get restaurants</button>
 		  </form>
 
 		</div>
 
-		<!--
+		
 	    <div class="col-md-8" style="margin-top:100px;">
-	    	<p style="font-size:23px" class="text-center" ng-show="showNoExhibits">There are no exhibits listed</p>
-	        <div class="col-md-offset-1 col-md-5" ng-repeat="exhibit in exhibitResults">
+	    	<p style="font-size:23px" class="text-center" ng-show="showNoRestaurants">There are no restaurants listed</p>
+	        <div class="col-md-offset-1 col-md-5" ng-repeat="restaurant in restResults">
 	        	<div class="well">
-	        		<p style="text-align:center;"><b>{{exhibit.name}}</p></span>
-	        		<p>Address: <a style="color:black;" href="https://maps.google.com/?q={{exhibit.address}}">{{exhibit.address}}</a></p>
-	        		<p><span class="glyphicon glyphicon-globe"></span>  Connections: {{exhibit.connections}}</p>
+	        		<p style="text-align:center;"><b>{{restaurant.name}}</p></span>
+	        		<p>Address: <a style="color:black;" href="https://maps.google.com/?q={{restaurant.address}}">{{restaurant.address}}</a></p>
+	        		<p>Travel Distance: {{restaurant.distance}} mi</p>
+	        		<p>Trip Duration: {{restaurant.duration}} mins</p>
+	        		<p><span class="glyphicon glyphicon-globe"></span>  Connections: {{restaurant.connections}}</p>
 	        		<div class="text-center">
 	        			<button type="button" class="btn btn-danger" ng-show="true">Connect</button>
 	        			<button type="button" class="btn btn-danger" ng-show="false">Disconnect</button>
@@ -137,8 +140,6 @@
 	        	</div>
 	        </div>
 	    </div>
--->
-
 
 	<script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
 

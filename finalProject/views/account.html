@@ -21,10 +21,15 @@
     <script src="javascripts/accountApp.js"></script>
     <script src="javascripts/factories.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="javascripts/navigation_bar.js"></script>
+
     <!-- Custom styles for this template -->
+    
     <link href="stylesheets/navbar.css" rel="stylesheet">
     <link href="stylesheets/restaurants.css" rel="stylesheet">
     <link href="stylesheets/btn-outline.css" rel="stylesheet">
+
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -41,9 +46,9 @@
 		      <a class="navbar-brand" href="index.html">Culture Connect</a>
 		    </div>
 		    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-		      <ul class="nav navbar-nav">
+		      <ul class="nav navbar-nav navbar-link-options">
 		        <li>
-		          <a href="index.html">Home</a>
+		          <a href="/">Home</a>
 		        </li>
 		        <li>
 		          <a href="#">How to Use</a>
@@ -51,23 +56,20 @@
 				<li class="dropdown">
 			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
 			        <ul class="dropdown-menu">
-			          <li><a href="restaurants.html">Restaurants</a></li>
+			          <li><a href="/restaurant_page">Restaurants</a></li>
 			          <li><a href="#">Cultural Events</a></li>
-			          <li><a href="exhibits.html">Museums/Exhibits</a></li>
+			          <li><a href="/exhibits_page">Museums/Exhibits</a></li>
 			        </ul>
 			      </li>
 		        <li>
 		          <a href="#">Contact Us</a>
-		        </li>
-		        <li class="active">
-		          <a href="account.html">My Account</a>
 		        </li>
 		      </ul>
 		    </nav>
 		  </div>
 		</header>
 
-		<h1 id="restaurantPageTitle">My Account</h1>
+		<h1 id="restaurantPageTitle">{{account_page_title}}</h1>
 
 		<div class="form-group col-md-3 col-md-offset-1">
 		 	  <form ng-submit="addRestaurant()" role="form">

@@ -17,15 +17,31 @@ res.sendfile('views/login.html');
 
 module.exports = function(passport){
 
-/* GET login page. */
-router.get('/', isLoggedin, function(req, res){
-    res.sendfile('views/info.html');
+router.get('/',function(req, res){
+    res.sendfile('views/index.html');
+});
+
+router.get('/restaurant_page',function(req, res){
+    res.sendfile('views/restaurants.html');
+});
+
+router.get('/exhibits_page',function(req, res){
+    res.sendfile('views/exhibits.html');
+});
+
+router.get('/login', function(req, res){
+    res.sendfile('views/login.html');
+});
+
+/* GET account page/ login page */
+router.get('/account_page', isLoggedin, function(req, res){
+    res.sendfile('views/account.html');
 });
 
 /* Handle Login POST */
 router.post('/login', passport.authenticate('login', {
-    successRedirect: '/',
-    failureRedirect: '/'
+    successRedirect: '/account_page',
+    failureRedirect: '/login'
 }));
 
 /* GET Registration Page */
@@ -46,8 +62,20 @@ router.get('/signout', function(req, res) {
 });
 
 //{loginData: isLoggedin}
-router.get('/authenticationCheck',function(req, res) {
-  res.json({loginData: req.isAuthenticated()});
+router.get('/authenticationData',function(req, res) {
+  var isAuth = req.isAuthenticated();
+  console.log(req.user);
+  if(isAuth) {
+    res.json({"loginData": isAuth,
+    		  "username": req.user.username,
+    		  "_id": req.user._id,
+    		  "firstName": req.user.firstName,
+    		  "lastName": req.user.lastName});
+  }
+  else {
+    res.json({"loginData": isAuth});
+  }
+  
 });
 
 router.get('/distance', function(req, res, next) {
