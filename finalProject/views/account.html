@@ -32,7 +32,7 @@
 
     <script src="javascripts/navigation_bar.js"></script>
     <!-- Add restaurant Modal-->
-    <script src="javascripts/accountAppAddRestModal.js"></script>
+    <script src="javascripts/modal.js"></script>
 
     <!-- Custom styles for this template -->
     
@@ -82,7 +82,9 @@
 		<h1 id="restaurantPageTitle">{{account_page_title}}</h1>
 
 
-		<button style="margin-top:100px;" ng-click="toggleModal()" class="btn btn-lg btn-danger btn-outline col-md-offset-1">Add restaurant</button>
+    <button style="margin-top:100px;" ng-click="toggleAccountInfoModal()" class="btn btn-lg btn-danger btn-outline col-md-offset-1">Account Info</button><br>
+		<button style="margin-top:25px;" ng-click="toggleAddRestModal()" class="btn btn-lg btn-danger btn-outline col-md-offset-1">Add restaurant</button>
+    
 
 
 
@@ -103,14 +105,22 @@
       <div class="form-group">
         <label>Choose a Country: </label>
         <select ng-model="data.restCountry" class="form-control" required="true">
-		    <option disabled selected value> ---- </option>
-		  	<option ng-repeat="country in data.countries" ng-value="country._id" value="country._id">{{country.name}}</option>
-		</select>
+    		    <option disabled selected value> ---- </option>
+    		  	<option ng-repeat="country in data.countries" ng-value="country._id" value="country._id">{{country.name}}</option>
+    		</select>
       </div>
-      <button class="btn btn-danger">Add Restaurant</button>
+      <button type="submit" class="btn btn-danger">Add Restaurant</button>
     </form>
   </modal>
 
+
+
+
+  <modal title="Account Info" visible="showInfoModal" >
+    <p><b>Name:</b> {{data.accountName}}</p>
+    <p><b>Email:</b> {{data.accountEmail}}</p>
+    <p><b>Username:</b> {{data.accountUsername}}</p>
+  </modal>
 
 
 

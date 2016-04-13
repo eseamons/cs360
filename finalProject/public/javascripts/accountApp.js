@@ -5,21 +5,31 @@ app.controller('accountCtrl', function($scope,$http,countryFactory) {
     $scope.countries = countryFactory.getCountries();
     $scope.data = {};
     $scope.data.countries = $scope.countries;
+    $scope.data.accountName = '';
+    $scope.data.accountEmail = '';
     $scope.showModal = false;
+    $scope.showInfoModal = false;
     $scope.authData = '';
 
-    $http.get('/authenticationData').success(function(data){
-        $scope.authData = data;
-        $scope.account_page_title = 'Account for ' + data.firstName + ' ' + data.lastName;
+    $http.get('/authenticationData').success(function(results){
+        $scope.authData = results;
+        $scope.account_page_title = 'Account for ' + results.firstName + ' ' + results.lastName;
+        $scope.data.accountName = results.firstName + ' ' + results.lastName;
+        $scope.data.accountEmail = results.email;
+        $scope.data.accountUsername = results.username;
     });
 
-    $scope.toggleModal = function() {
+    $scope.toggleAddRestModal = function() {
 
         $scope.data.restCountry = null;
         $scope.data.restName = '';
         $scope.data.restAddress = '';
         $scope.showModal = true;
 
+    }
+
+    $scope.toggleAccountInfoModal = function() {
+        $scope.showInfoModal = true;
     }
 
     $scope.addRestaurant = function() {
