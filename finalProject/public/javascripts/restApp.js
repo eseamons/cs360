@@ -45,6 +45,7 @@ app.controller('restCtrl', function($scope,$http,countryFactory,cookieFactory) {
 			         							connections:value.connections,
 			         							distance:distance,
 			         							duration:duration,
+			         							user_id: value.user_id,
 			         							button_text: 'Connect',
 			         							disabled: false});
 			        }
@@ -59,10 +60,18 @@ app.controller('restCtrl', function($scope,$http,countryFactory,cookieFactory) {
 
 
     $scope.connect = function(restaurant) {
-    		alert('test');
-    		restaurant.connections += 1;
-    		restaurant.button_text = 'Connected';
-    		restaurant.disabled = true;
+    		var connection = {restaurant_id: restaurant._id, user_id: restaurant.user_id};
+    		$http.post('/connection', connection).success(function(data){
+	    		$http.put('/restaurants/'+restaurant._id+'/addConnection', connection).success(function(data){
+		    				      	restaurant.connections += 1;
+						    		restaurant.button_text = 'Connected';
+						    		restaurant.disabled = true;
+						    		alert("success");
+			    });
+		    });
+
+		    //alert(JSON.stringify(restaurant));
+    		
     }
 
 

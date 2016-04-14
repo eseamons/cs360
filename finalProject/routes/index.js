@@ -217,7 +217,15 @@ router.get('/countryCount', function(req, res, next) {
   });
 });
 
+
 // connection
+router.get('/connections', function(req, res, next) {
+  Connection.find(function(err, connections){
+    if(err){ return next(err); }
+    res.json(connections);
+  });
+});
+
 router.post('/connection', function(req, res, next) {
   var connection = new Connection(req.body);
   connection.save(function(err, connection){
