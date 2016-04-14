@@ -19,6 +19,15 @@ app.factory('countryFactory',function($http) {
 		    	angular.copy(response,countries)
 		    });
 		    return countries;
+        },
+        getCountryNameById: function(id,countries) {
+            var countryName = '';
+            angular.forEach(countries, function(value, key){
+                if(value._id == id) {
+                    countryName = value.name;
+                }
+            });
+            return countryName;
         }
     };
 });

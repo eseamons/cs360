@@ -7,9 +7,12 @@ app.controller('accountCtrl', function($scope,$http,countryFactory) {
     $scope.data.countries = $scope.countries;
     $scope.data.accountName = '';
     $scope.data.accountEmail = '';
+    $scope.data.myRestList = [];
     $scope.showModal = false;
     $scope.showInfoModal = false;
+    $scope.showMyRestModal = false;
     $scope.authData = '';
+
 
     $http.get('/authenticationData').success(function(results){
         $scope.authData = results;
@@ -17,7 +20,15 @@ app.controller('accountCtrl', function($scope,$http,countryFactory) {
         $scope.data.accountName = results.firstName + ' ' + results.lastName;
         $scope.data.accountEmail = results.email;
         $scope.data.accountUsername = results.username;
+        $http.get('/user_added_restaurants'+'?user_id='+$scope.authData._id).success(function(results) {
+    		angular.forEach(results, function(value, key){
+            	$scope.data.myRestList.push({name: value.name, country_name: countryFactory.getCountryNameById(value._id)});
+            });
+            //$scope.data.myRestList = results;
+        }); 
     });
+
+    
 
     $scope.toggleAddRestModal = function() {
 
@@ -32,12 +43,25 @@ app.controller('accountCtrl', function($scope,$http,countryFactory) {
         $scope.showInfoModal = true;
     }
 
+    $scope.toggleViewMyRestModal = function() {
+    	$scope.data.myRestList = [];
+    	$http.get('/user_added_restaurants'+'?user_id='+$scope.authData._id).success(function(results) {
+    		angular.forEach(results, function(value, key){
+    			var country_name = countryFactory.getCountryNameById(value.country_id,$scope.data.countries);
+            	$scope.data.myRestList.push({name: value.name, country_name: country_name, address: value.address, connections: value.connections});
+            });
+            //$scope.data.myRestList = results;
+        });
+        
+    	$scope.showMyRestModal = true;
+    }
+
     $scope.addRestaurant = function() {
         //alert($scope.data.restCountry);
         //alert($scope.data.restName);
         //alert($scope.data.restAddress);
 
-    	$scope.newRest = {name:$scope.data.restName,address:$scope.data.restAddress, country_id:$scope.data.restCountry};
+    	$scope.newRest = {name:$scope.data.restName,address:$scope.data.restAddress, country_id:$scope.data.restCountry, user_id:$scope.authData._id};
     	$scope.create($scope.newRest);
 
         $scope.data.restName = '';

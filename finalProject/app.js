@@ -9,6 +9,8 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/CultureConnect');
 require('./models/Restaurants');
 require('./models/Countries');
+require('./models/Connection');
+
 
 
 var routes = require('./routes/index');

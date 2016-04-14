@@ -124,7 +124,6 @@
 
 		
 	    <div class="col-md-8" style="margin-top:100px;">
-	    	<p style="font-size:23px" class="text-center" ng-show="showNoRestaurants">There are no restaurants listed</p>
 	        <div class="col-md-offset-1 col-md-5" ng-repeat="restaurant in restResults">
 	        	<div class="well">
 	        		<p style="text-align:center;"><b>{{restaurant.name}}</p></span>
@@ -133,8 +132,7 @@
 	        		<p>Trip Duration: {{restaurant.duration}} mins</p>
 	        		<p><span class="glyphicon glyphicon-globe"></span>  Connections: {{restaurant.connections}}</p>
 	        		<div class="text-center">
-	        			<button type="button" class="btn btn-danger" ng-show="true">Connect</button>
-	        			<button type="button" class="btn btn-danger" ng-show="false">Disconnect</button>
+	        			<button type="button" class="btn btn-danger" ng-disabled="restaurant.disabled" ng-click="connect(restaurant)">{{restaurant.button_text}}</button>
 	        		</div>
 
 	        	</div>

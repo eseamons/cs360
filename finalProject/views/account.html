@@ -19,7 +19,11 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-
+    <style>
+      .panel-body {
+    padding: 0;
+}
+    </style>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -83,7 +87,8 @@
 
 
     <button style="margin-top:100px;" ng-click="toggleAccountInfoModal()" class="btn btn-lg btn-danger btn-outline col-md-offset-1">Account Info</button><br>
-		<button style="margin-top:25px;" ng-click="toggleAddRestModal()" class="btn btn-lg btn-danger btn-outline col-md-offset-1">Add restaurant</button>
+		<button style="margin-top:25px;" ng-click="toggleAddRestModal()" class="btn btn-lg btn-danger btn-outline col-md-offset-1">Add restaurant</button><br>
+    <button style="margin-top:25px;" ng-click="toggleViewMyRestModal()" class="btn btn-lg btn-danger btn-outline col-md-offset-1">My restaurants</button>
     
 
 
@@ -120,6 +125,17 @@
     <p><b>Name:</b> {{data.accountName}}</p>
     <p><b>Email:</b> {{data.accountEmail}}</p>
     <p><b>Username:</b> {{data.accountUsername}}</p>
+  </modal>
+
+  <modal title="My Restaurants" visible="showMyRestModal" >
+    <div ng-repeat="restaurant in data.myRestList">
+        <p><b>{{restaurant.name}}</b></p>
+        <ul>
+          <li>Country: {{restaurant.country_name}}</li>
+          <li>Address: {{restaurant.address}}</li>
+          <li>Connections: {{restaurant.connections}}</li>
+        </ul>
+    </div>
   </modal>
 
 
